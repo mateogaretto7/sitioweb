@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 2</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesproject2.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">Volver</a>
+        <h1>Database mySQL para Control de Inventario</h1>
+    </header>
+    <section id="project-details">
+        <h2>¿Por qué desarrollé esta base de datos?</h2>
+        <p>Desarrollé esta base de datos por medio de mySQL, con el fin de implementarla en una tienda minorista, de tal forma que permita proporcionar un control exhaustivo sobre los bienes en inventario. Objetivos puntuales del proyecto:</p>
+        <ul>
+            <h2>Seguimiento Preciso:</h2>
+                <li>El sistema registra meticulosamente las entradas y salidas de inventario. Esto permite a la tienda tener una visión clara de su stock en tiempo real.</li>
+                <li>La precisión en el seguimiento evita errores y pérdidas innecesarias.</li>
+            <h2>Optimización de la Gestión de Inventarios:</h2>
+                <li>Al monitorear la demanda y los patrones de consumo, la tienda puede tomar decisiones informadas sobre reabastecimiento y rotación de productos.</li>
+                <li>La base de datos ayuda a evitar excesos o faltantes, lo que impacta directamente en la eficiencia operativa.</li>
+            <h2>Informes Detallados:</h2>
+                <li>La generación de informes personalizados proporciona una visión completa del inventario. Esto incluye datos como niveles de stock, productos más vendidos y tendencias estacionales.</li>
+                <li>Estos informes son herramientas valiosas para la toma de decisiones estratégicas.</li>
+            <h2>Satisfacción del Cliente:</h2>
+                <li>Al tener productos disponibles cuando los clientes los necesitan, la tienda mejora la satisfacción del cliente.</li>
+                <li>La base de datos contribuye a una experiencia de compra más fluida y confiable.</li>
+            </li>
+        </ul>
+    </section>
+    <section id="project-gallery">
+        <div class="gallery-item">
+            <img src="images/project6.png" alt="Base de datos MySQL" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/project7.png" alt="Inventario" onclick="openModal(this)">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 - 2025 Mateo Garetto · Todos los derechos reservados</p>
+    </footer>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+    </div>
+    <script src="js/projecto2.js"></script>
+</body>
+</html>

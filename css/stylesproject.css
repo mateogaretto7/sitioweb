@@ -1,0 +1,245 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    border: 0;
+    background: rgba(192, 205, 206, 0.285);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-image: radial-gradient(circle at 97.56% 37.26%, #dbdfdb 0, #cdc8cf 16.67%, #bbb0c5 33.33%, #a498bc 50%, #8882b4 66.67%, #686fae 83.33%, #3e60a8 100%);
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    background-color: #d1e8e949;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #b8d4d8;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#project-details {
+    padding: 20px;
+    background-color: #d1e8e949;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: none; /* Elimina cualquier restricción de ancho máximo */
+    margin: 20px auto; /* Centra el contenedor */
+    width: 89%;
+}
+
+
+#project-details h2 {
+    font-size: 1.2em;
+    color: #000000;
+}
+
+#project-details p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.gallery-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-image: radial-gradient(circle at 97.56% 37.26%, #dbdfdb 0, #cdc8cf 16.67%, #bbb0c5 33.33%, #a498bc 50%, #8882b4 66.67%, #686fae 83.33%, #3e60a8 100%);
+    color: rgb(0, 0, 0);
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content, .close {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Ajustes específicos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    .back-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 16px;
+        font-size: 0.9em; /* Ajuste de tamaño de fuente */
+    }
+    header h1 {
+        font-size: 1.3em;
+    }
+    #project-details h2 {
+        font-size: 1.2em;
+    }
+    #project-details {
+        width: calc(100% - 30px); /* Full width minus padding */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+    #project-gallery .gallery-item {
+        flex: 1 1 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        font-size: 0.8em; /* Ajuste adicional de tamaño de fuente */
+    }
+    header h1 {
+        font-size: 1em;
+    }
+    #project-details {
+        padding: 15px;
+        width: calc(100% - 20px); /* Full width minus padding */
+    }
+    #project-details h2 {
+        font-size: 1em;
+    }
+    #project-details p {
+        font-size: 1em;
+    }
+    #project-gallery {
+        padding: 10px;
+    }
+    #project-gallery .gallery-item {
+        flex: 1 1 calc(100% - 10px);
+        max-width: calc(100% - 10px);
+    }
+}
+
+/* Ajustes para botones de navegación del modal */
+.mfp-arrow {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.mfp-arrow-left {
+    left: 15px;
+    border-radius: 0 3px 3px 0;
+}
+
+.mfp-arrow-right {
+    right: 15px;
+    border-radius: 3px 0 0 3px;
+}
+
+.mfp-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}

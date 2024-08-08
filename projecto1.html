@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesproject.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">Volver</a>
+        <h1>Sistema de Gestión Empresarial en Excel</h1>
+    </header>
+    <section id="project-details">
+        <h2>¿Por qué desarrollé este sistema de gestión empresarial en Excel?</h2>
+        <p>Detecté que un comercio carecía de herramientas accesibles y eficientes para gestionar sus operaciones diarias. Para cubrir esta necesidad, desarrollé un Sistema de Gestión Empresarial en Excel, enfocado en optimizar la administración y el control de inventarios con sus entradas y salidas, finanzas, análisis de datos, entre otras. Este sistema incluye:</p>
+        <ul>
+            <h2>Control de Inventarios:</h2> 
+                <li>Gestión de insumos y productos, seguimiento de entradas y salidas.</li>
+            <h2>Gestión Financiera:</h2> 
+                <li>Registro y análisis de transacciones, facturación y pagos.</li>
+            <h2>Análisis de Datos:</h2> 
+                <li>Herramientas para interpretar datos y generar informes.</li>
+            <h2>Historial:</h2> 
+                <li>Seguimiento y registro de operaciones y movimientos.</li> 
+        </ul>
+        <p>Este sistema centraliza la información, reduce errores y proporciona una visión clara del estado operativo y financiero, ayudando a las empresas a ser más eficientes y competitivas.</p>
+    </section>
+    <section id="project-gallery">
+        <div class="gallery-item">
+            <img src="images/project1.png" alt="Lobby" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/project2.png" alt="Costeo" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/project3.png" alt="Entrada de productos" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/project4.png" alt="Salida de productos" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/project5.png" alt="Facturador" onclick="openModal(this)">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 - 2025 Mateo Garetto · Todos los derechos reservados</p>
+    </footer>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <button title="Previous (Left arrow key)" type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" onclick="changeImage(-1)">&#10094;</button>
+        <button title="Next (Right arrow key)" type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close" onclick="changeImage(1)">&#10095;</button>
+    </div>
+    <script src="js/projecto.js"></script>
+</body>
+</html>
