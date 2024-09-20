@@ -1,12 +1,28 @@
+* {        
+  max-width: 100%;  
+  box-sizing: border-box;
+}
+
+body, ul, nav, header, footer, a, li, label, h1, h2, h3, h4, p, a, section, div, img, textarea, button, form, span, input, script  {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
+
 body.active {
   overflow: hidden;
   z-index: -1;
 }
+img, button {
+  max-width: 100%;
+  height: auto;
+}
+
 .no-js #experience-timeline > div {
   background: #fff;
   padding: 10px;
@@ -371,7 +387,6 @@ footer {
 .vtimeline-point {
   position: relative;
   display: block;
-  vertical-align: top;
   margin-bottom: 30px;
 }
 .vtimeline-icon {
@@ -441,45 +456,117 @@ footer {
   padding: 0 0 0 15px;
 }
 
-#projects {
-  padding: 50px 15px;
-  border-bottom: 1px solid #dcd9d9;
-  text-align: center;
+/*----- START PROJECT -----*/
+.projects {
+background: linear-gradient(to right, rgba(114, 104, 232, 0.272), rgba(255, 255, 255, 0));
+padding: 30px 0;
+text-align: center;
+container-name: projects;
+container-type: inline-size;
 }
-#projects h2 {
-  color: #374054;
-  margin-bottom: 50px;
+
+.projects h2 {
+font-size: 32px;
+color: #374054;
+margin-bottom: 30px;
 }
+
+/* Contenedor de la cuadrícula de proyectos */
+.project-container {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+gap: 100px;
+grid-row: 90px;
+max-width: 890px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
 .project {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto 30px auto;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 4px;
+background-color: white;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: left;
 }
-.project-image {
-  float: left;
+
+.project img {
+width: 100%;
+height: 240px;
+display: block;
 }
-.project-info {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 300px;
-  padding: 15px;
-  ;
+
+.project h3 {
+font-size: 1.8rem;
+color: #374054;
+margin: 15px 20px 10px;
+text-align: center;
 }
-.project-info h3 {
-  font-size: 1.5em;
-  font-weight: 300;
-  color: #374054;
-  margin: 0 0 15px 0;
+
+.project p {
+font-size: 1.5rem;
+color: #74808a;
+margin: 10px 20px;
+line-height: 1.5;
+text-align: center;
 }
-.project-info p {
-  color: #74808a;
-  margin: 0 0 15px 0;
-  font-size: 0.8em;
+
+.project-link {
+display: block;
+margin: 20px;
+text-align: center;
+color: #007bff;
+text-decoration: none;
+font-weight: bold;
 }
+
+.project-link:hover {
+text-decoration: underline;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+.project-container {
+  grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+  gap: 20px; /* Ajustamos el espacio entre proyectos */
+}
+
+.project {
+  margin-bottom: 20px; /* Espacio inferior entre los proyectos */
+}
+
+.project img {
+  height: auto; /* Ajustamos la altura para que sea dinámica en móviles */
+}
+
+.projects h2 {
+  font-size: 2rem; /* Reducimos el tamaño del título */
+}
+
+.project h3 {
+  font-size: 1.6rem; /* Ajustamos el tamaño del texto */
+}
+
+.project p {
+  font-size: 1.4rem;
+}
+}
+
+/* Adaptación para notebooks (entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+.project-container {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustamos el ancho mínimo de las columnas */
+  gap: 30px;
+  padding: 0 15px;
+}
+
+.project h3 {
+  font-size: 1.7rem;  
+}
+}
+
+/*----- END PROJECT -----*/
+
 .no-image .project-info {
   position: relative;
   margin: 0;
@@ -663,6 +750,7 @@ footer {
     text-align: left;
   }
 }
+
 @media only screen and (max-width: 768px) {
   header {
     position: fixed;
